@@ -1,5 +1,6 @@
 <?php
 
+
 if (!session_id()) session_start();
 try {
     $request_uri = get_server('request_uri');
@@ -16,8 +17,8 @@ try {
         /* ROUTES API */
         '/api/post',
     ));
-
-    if($request_uri == "/") {
+    
+    if($request_uri == "/projet_debogage/php-toolbox-projet/") {
         $request_uri = '/home';
     }
 
