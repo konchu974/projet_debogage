@@ -17,6 +17,7 @@ function has_file(string $file_name, string $directory = null) {
     return file_exists($file) ? $file : false;
 }
 
+
 /**
  * Get file or include a file and send the data to the file if the data has been inserted
  *
@@ -24,10 +25,10 @@ function has_file(string $file_name, string $directory = null) {
  * @param string directory
  * @param array data to be sent
  *
- * @return the file wich included by
+ * @return // the file wich included by
  * include_once function.
  */
 function get_file(string $file_name, string $directory = null, array $data = array()) {
     $file = has_file($file_name, $directory);
-    return !empty($file) ? include_once $file : printf("Fichier [<b> %s </b>] introuvable", $file_name);
+    return !empty($file) ? include_once $file : printf("Fichier [<b> %s </b>] introuvable <br>", $file_name);
 }
