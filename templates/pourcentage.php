@@ -155,7 +155,7 @@ template('header', array(
     window.addEventListener('load', () => {
         let forms = document.forms;
 
-        for(form of forms){
+        for (form of forms) {
             form.addEventListener('submit', async (event) => {
                 event.preventDefault();
 
@@ -163,9 +163,13 @@ template('header', array(
 
                 const response = await fetch('/api/post', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify(
-                        Object.assign(Object.fromEntries(formData), {form: event.target.name})
+                        Object.assign(Object.fromEntries(formData), {
+                            form: event.target.name
+                        })
                     )
                 });
 
@@ -174,8 +178,7 @@ template('header', array(
                 let inputName = Object.keys(result.data)[0];
 
                 event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
-
-            })
+            });
         }
     });
 </script>
