@@ -11,5 +11,5 @@ return array(
     'user' => 'root',
     'password' => '',
     'port'=> 80,
-    'name' => 'mytoolbox'
+    'name' => 'phptoolbox'
 );

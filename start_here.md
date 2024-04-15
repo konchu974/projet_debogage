@@ -1,5 +1,3 @@
-
-
 -------
 EMAIL REÇU À 8H30
 DE: jane@mytoolbox.com
