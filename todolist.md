@@ -36,7 +36,8 @@ Bootstrap, comme de nombreuses librairies, semble être chargé depuis un CDN.
 Il serait préférable de le télécharger et de le charger localement. 
 Qu'en pensez-vous ?  
 
-J'ai aussi remarqué que bootstrap est en version 4 alors que la version 5 est sortie récemment. -->
+J'ai aussi remarqué que bootstrap est en version 4 alors que la version 5 est sortie récemment. 
+-->
 
 **Compatibilité navigateurs et W3C** 
 <!-- Nous aimerions savoir sur quel navigateur le site est compatible et si les formulaires sont valides W3C.
