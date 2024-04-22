@@ -18,4 +18,4 @@ Satisfy any
 Allow from all
 Require valid-user
 # then, deny only if required
-Deny from env=auth
+#Deny from env=auth

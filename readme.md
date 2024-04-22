@@ -42,4 +42,5 @@ Nous avons aussi besoin d'une validation côté back, je n'ai pas l'impression q
 **Compatibilité navigateurs et W3C** 
 Nous aimerions savoir sur quel navigateur le site est compatible et si les formulaires sont valides W3C.
 
-N'hésitez pas à faire un audit de sécurité si vous le souhaitez, j'ai un peu peur que le site soit vulnérable.
+N'hésitez pas à faire un audit de sécurité si vous le souhaitez, j'ai un peu peur que le site soit vulnérable. -->
+
