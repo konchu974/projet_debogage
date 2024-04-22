@@ -5,7 +5,7 @@ template('header', array(
 ?>
 
 <!-- ======= CESAR ======= -->
-<section id="homepage" class="homepage">
+<section id="cesar" class="cesar ms-5 me-5">
     <div class="container">
         <div class="section-title">
             <h2>Coder ou décoder un texte à l'aide du Code César </h2>
@@ -19,7 +19,7 @@ template('header', array(
                     </p>
 
                     <p>
-                        Le code César consiste à substituer une lettre par une autre un plus loin dans l'alphabet, c'est-à-dire qu'une lettre est toujours remplacée par la même lettre et que l'on applique le même décalage à toutes les lettres, cela rend très simple le décode d'un message puisqu'il y a 25 décalages possibles.
+                        Le code César consiste à substituer une lettre par une autre un plus loin dans l'alphabet, c'est-à-dire qu'une lettre est toujours remplacée par la même lettre et que l'on applique le même décalage à toutes les lettres, cela rend très simple le décodage d'un message puisqu'il y a 25 décalages possibles.
                     </p>
                 </blockquote>
                 <figcaption><cite><a href="https://calculis.net/code-cesar">Calculis.net</a></cite></figcaption>
@@ -27,9 +27,9 @@ template('header', array(
         </div>
 
         <div class="row justify-content-around">
-            <fieldset class="col-5 mt-4">
+            <fieldset class="col-5 mt-4 ms-5">
                 <legend>Chiffrer</legend>
-                <form action="" method="POST" name="cesar">
+                <form action="" method="POST" name="cesar-encrypt">
                     <div class="form-group row">
                         <div class="col-12">
                             <label for="clear">Le texte à chiffrer</label>
@@ -46,22 +46,22 @@ template('header', array(
                         </div>
 
                         <div class="col-12 mt-4">
-                            <label for="result">Résultat</label>
-                            <p id="result"></p>
+                            <label for="encrypt-result">Résultat</label>
+                            <p id="encrypt-result"></p>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-12">
-                            <button type="submit" class="btn-block btn btn-primary">Chiffrer</button>
+                            <button type="submit" class="btn btn-primary">Chiffrer</button>
                         </div>
                     </div>
                 </form>
             </fieldset>
 
-            <fieldset class="col-5 mt-4  ms-md-auto">
+            <fieldset class="col-5 mt-4 me-5 ms-md-auto">
                 <legend>Déchiffrer</legend>
-                <form action="" method="POST" name="cesar">
+                <form action="" method="POST" name="cesar-decrypt">
                     <div class="form-group row">
                         <div class="col-12">
                             <label for="result">Le texte à déchiffrer</label>
@@ -78,14 +78,14 @@ template('header', array(
                         </div>
 
                         <div class="col-12 mt-4">
-                            <label for="clear">Résultat</label>
-                            <p id="clear"></p>
+                            <label for="decrypt-result">Résultat</label>
+                            <p id="decrypt-result"></p>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-12">
-                            <button type="submit" class="btn-block btn btn-primary">Déchiffrer</button>
+                            <button type="submit" class="btn btn-primary">Déchiffrer</button>
                         </div>
                     </div>
                 </form>
@@ -93,6 +93,8 @@ template('header', array(
         </div>
     </div>
 </section>
+<!-- End CESAR Section -->
+
 
 
 <script type="text/javascript">
