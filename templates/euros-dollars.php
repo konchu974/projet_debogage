@@ -15,7 +15,7 @@ template('header', array(
 
             <fieldset class="col-12 mt-4 p-3">
                 <legend>Euro vers dollar américain</legend>
-                <form action="" method="post" name="euro-to-dollar">
+                <form action="" method="post" name="euros-dollars">
                     <div class="row">
                         <div class="col">
                             <label for="EUR" class="form-label visually-hidden">Euros</label>
@@ -50,7 +50,7 @@ template('header', array(
 
             <fieldset class="col-12 mt-4 p-3">
                 <legend>Dollar américain vers euro</legend>
-                <form action="" method="post" name="dollar-to-euro">
+                <form action="" method="post" name="euros-dollars">
                     <div class="row">
                         <div class="col">
                             <label for="USD" class="form-label visually-hidden">Dollars</label>
