@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="<?= home_url(); ?>/assets/css/theme.css">
     <link rel="stylesheet" href="<?= home_url(); ?>/assets/css/style.css">
 
+    <!--Boxicon -->
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -50,3 +56,7 @@
     </div>
 </header><!-- End Header -->
 <main id="main">
+
+
+
+</body>

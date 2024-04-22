@@ -32,6 +32,16 @@
         ];
     }
 
+    // Pour le déchiffrement :
+
+    //     $index - $key : soustraction de la clé de l'index.
+    //     + 26 : ajout de 26 pour assurer que le résultat est positif et dans la plage valide des indices de l'alphabet.
+    //     % 26 : modulo 26 assure un décalage circulaire, ramenant l'index dans la plage de 0 à 25 (les indices valides de l'alphabet).
+    //     Pour le chiffrement :
+        
+    //     $index + $key : ajout de la clé à l'index.
+    //     % 26 : modulo 26 assure un décalage circulaire si l'index dépasse 25, le ramenant dans la plage de 0 à 25.
+
     function cesar($clear, $key, $reverse = false){
         $alphabet = 'abcdefghijklmnopqrstuvwxyz';
         $alphabet = str_split($alphabet);
@@ -40,7 +50,7 @@
 
         foreach ($clear as $letter){
             $index = array_search($letter, $alphabet);
-            $index = $reverse ? $index - $key : $index + $key;
+            $index = $reverse ? ($index - $key + 26) % 26 : ($index + $key) % 26; //modification effectuer pour traduire la lettre A
             if($index > 25){
                 $index = $index - 26;
             }
