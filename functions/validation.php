@@ -3,7 +3,7 @@
 function sanitize($item, $type) {
     switch($type) {
         case 'string':
-            $item = filter_var($item, FILTER_SANITIZE_STRING);
+            $item = filter_var($item, FILTER_SANITIZE_FULL_SPECIAL_CHARS);  //FILTER_SANITIZE_STRING est désormais obsolète.alternative recommandée pour filtrer les chaînes de caractères.
             break;
         case 'email':
             $item = filter_var($item, FILTER_SANITIZE_EMAIL);
@@ -18,6 +18,7 @@ function sanitize($item, $type) {
 
     return $item;
 }
+
 
 function validate(array $items, array $rule_items) {
     $result = array();

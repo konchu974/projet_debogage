@@ -7,9 +7,9 @@
 
 // Pourquoi pas utiliser un .ENV ?
 return array(
-    'host' => 'localhost:3306',
+    'host' => 'localhost',
     'user' => 'root',
     'password' => '',
-    'port'=> 3306,
+    'port' => 3306,
     'name' => 'mytoolbox'
 );
