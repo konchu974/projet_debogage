@@ -4,14 +4,14 @@
     ));
 ?>
 
-<section id="homepage" class="homepage">
+<section id="homepage" class="homepage ms-5 me-5">
     <div class="container">
         <div class="section-title">
             <h2>Convertisseur système décimal positif en binaire </h2>
         </div>
 
         <div class="row">
-            <figure class="bg-light rounded p-3">
+            <figure class="bg-light rounded">
                 <blockquote cite="https://www.huxley.net/bnw/four.html">
                     <p>
                         Le système binaire (du latin binārĭus, « double ») est le système de numération utilisant la base 2. On nomme couramment bit (de l'anglais binary digit, soit « chiffre binaire ») les chiffres de la numération binaire positionnelle. Un bit peut prendre deux valeurs, notées par convention 0 et 1.
@@ -24,36 +24,37 @@
         </div>
 
         <div class="row">
-            <fieldset class="col-6 mt-4">
+            <fieldset class="col-md-6 mt-3">
                 <legend>Convertisseur</legend>
                 <form action="" name="decimal-hexadecimal">
-                    <div class="form-group row">
+                    <div class="row p-2">
                         <div class="col-12">
-                            <label for="decimal">Décimal</label>
+                            <label for="decimal" class="form-label">Décimal</label>
                             <div class="input-group">
                                 <input id="decimal" name="decimal" type="number" min="0" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="col-12">
-                            <label for="hex">Héxadécimal</label>
+                            <label for="hex" class="form-label">Héxadécimal</label>
                             <div class="input-group">
-                                <input id="hex" name="hex" type="text"  class="form-control" disabled>
+                                <input id="hex" name="hex" type="text" class="form-control" disabled>
                             </div>
                         </div>
 
-                        <div class="col-12">
-                            <label for="binary">Binaire</label>
+                        <div class="col-12 mb-2">
+                            <label for="binary" class="form-label">Binaire</label>
                             <div class="input-group">
-                                <input id="binary" name="binary" type="text" min="0" class="form-control" disabled>
+                                <input id="binary" name="binary" type="text" class="form-control" disabled>
                             </div>
                         </div>
                     </div>
                 </form>
             </fieldset>
-            </div>
         </div>
+    </div>
 </section>
+
 
 
     <script type="text/javascript">
