@@ -91,23 +91,19 @@ switch ($body->form){
         echo json_encode($data);
         break;
     case 'euros-dollars':
-
-        $EUR = null;
-        $USD = null;
-        if(property_exists($body, 'EUR')){
-            $EUR = $body->EUR;
-        }
-        if(property_exists($body, 'USD')){
-            $USD = $body->USD;
-        }
-
-        $result = convertEuroDollars($EUR, $USD);
+        $montant = $body->montant;
+        $devisesource = $body->devisesource;
+        $devisecible = $body->devisecible;
+    
+        // Appeler la fonction de conversion de devises
+        $result = convertEuroDollars($montant, $devisesource, $devisecible);
 
         $data = [
             'response' => 'success',
             'message' => 'Calcul réussi',
             'data' => $result
         ];
+
         echo json_encode($data);
         break;
 }

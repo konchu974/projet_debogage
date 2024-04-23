@@ -68,26 +68,23 @@
         }
     }
 
-    function convertEuroDollars($euro = null, $dollars = null){
-        $currency = $euro === null ? 'USD' : 'EUR';
-        $reverseCurrency = $currency === 'EUR' ? 'USD' : 'EUR';
-
-        $url = 'https://open.er-api.com/v6/latest/' . $currency;
-
+    function convertEuroDollars($amount, $fromCurrency, $toCurrency){
+        // URL de l'API de conversion de devises
+        $url = 'https://open.er-api.com/v6/latest/' . $fromCurrency;
+    
+        // Récupération des données JSON de l'API
         $data = file_get_contents($url);
         $data = json_decode($data, true);
-        $rate = $data['rates'][$reverseCurrency];
-
-        if($euro === null){
-            $euro = $dollars * $rate;
-            return [
-                'EUR' => $euro,
-            ];
-        }
-        if($dollars === null){
-            $dollars = $euro * $rate;
-            return [
-                'USD' => $dollars,
-            ];
-        }
+    
+        // Obtention du taux de change pour la devise cible
+        $rate = $data['rates'][$toCurrency];
+    
+        // Conversion du montant dans la devise cible
+        $convertedAmount = $amount * $rate;
+    
+        // Retourne le montant converti dans un tableau associatif
+        return [
+            $toCurrency => $convertedAmount,
+        ];
     }
+    
