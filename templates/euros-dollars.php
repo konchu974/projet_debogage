@@ -103,7 +103,7 @@ template('header', array(
                     <div class="col">
                         <label for="litrecible" class="form-label visually-hidden">resultat</label>
                         <div class="input-group">
-                            <input id="litrecible" name="litrecible" type="text" class="form-control " disabled>
+                            <input id="litrecible" name="litrecible" type="text" class="form-control" disabled>
                             <div class="input-group-append">
                                 <div class="input-group-text">L</div>
                                 </div>
@@ -125,12 +125,11 @@ template('header', array(
 <script type="text/javascript">
     window.addEventListener('load', () => {
         let forms = document.forms;
-
         for (form of forms) {
             form.addEventListener('submit', async (event) => {
                 event.preventDefault();
-
-                const formData = new FormData(event.target).entries()
+                
+                const formData = new FormData(event.target).entries();
 
                 const response = await fetch('/api/post', {
                     method: 'POST',
@@ -144,15 +143,17 @@ template('header', array(
                     )
                 });
 
+                console.log(event.target.name);
+
                 const result = await response.json();
-
+                
                 let inputName = Object.keys(result.data)[0];
-
+                console.log(inputName);
                 // Update the correct input field based on the form name
                 if (event.target.name === 'euros-dollars') {
                     event.target.querySelector(`input[name="devisecible"]`).value = result.data[inputName];
                 } else if (event.target.name === 'mLtoL') {
-                    event.target.querySelector(`input[name="litre"]`).value = result.data[inputName];
+                    event.target.querySelector(`input[name="litrecible"]`).value = result.data[inputName];
                 }
             });
         }
