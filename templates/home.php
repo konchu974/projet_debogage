@@ -47,6 +47,15 @@ if (!empty($_POST)) {
             $messages['success'][] = 'Message envoyé !';
         }
     }
+
+    $to = "frederic.vinet2003@gmail.com";
+    $subject = $result['subject'];
+    $message = $result['message'];
+
+
+    mail(
+        $to, $subject, $message
+    );
 }
 ?>
 
