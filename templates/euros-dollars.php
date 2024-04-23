@@ -8,82 +8,8 @@ template('header', array(
 <section id="currency-converter" class="currency-converter mt-2 ms-5 me-5">
     <div class="container">
         <div class="section-title">
-            <h2>Convertisseur</h2>
+            <h2>Convertisseur Euros</h2>
         </div>
-
-        <!-- <div class="row">
-
-            <fieldset class="col-12 mt-4 p-3">
-                <legend>Euro vers dollar américain</legend>
-                <form action="" method="post" name="euros-dollars">
-                    <div class="row">
-                        <div class="col">
-                            <label for="EUR" class="form-label visually-hidden">Euros</label>
-                            <div class="input-group">
-                                <input id="EUR" name="EUR" type="text" class="form-control" required>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">€</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto align-self-center">
-                            <span class="ver">vaut actuellement</span>
-                        </div>
-
-                        <div class="col">
-                            <label for="USD" class="form-label visually-hidden">Dollars</label>
-                            <div class="input-group">
-                                <input id="USD" name="USD" type="text" class="form-control" disabled>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">$</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto">
-                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
-                        </div>
-                    </div>
-                </form>
-            </fieldset>
-
-            <fieldset class="col-12 mt-4 p-3">
-                <legend>Dollar américain vers euro</legend>
-                <form action="" method="post" name="euros-dollars">
-                    <div class="row">
-                        <div class="col">
-                            <label for="USD" class="form-label visually-hidden">Dollars</label>
-                            <div class="input-group">
-                                <input id="USD" name="USD" type="text" class="form-control" required>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">$</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto align-self-center">
-                            <span class="ver">vaut actuellement</span>
-                        </div>
-
-                        <div class="col">
-                            <label for="EUR" class="form-label visually-hidden">Euros</label>
-                            <div class="input-group">
-                                <input id="EUR" name="EUR" type="text" class="form-control" disabled>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">€</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto">
-                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
-                        </div>
-                    </div>
-                </form>
-            </fieldset>
-        </div>
-    </div> -->
         <fieldset class="col-12 mt-4 p-3">
             <legend>convertisseur de devise</legend>
             <form action="" method="post" name="euros-dollars">
@@ -145,9 +71,55 @@ template('header', array(
                 </div>
             </form>
         </fieldset>
-
+    </div>
+        
 </section><!-- End Currency Converter Section -->
 
+<!-- ======= Liquid Converter Section ======= -->
+<section id="currency-converter" class="currency-converter mt-2 ms-5 me-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Convertisseur de Liquide</h2>
+        </div>
+        <fieldset class="col-12 mt-4 p-3">
+            <legend>convertisseur de devise</legend>
+            <form action="" method="post" name="mLtoL">
+                <div class="row">
+                    <div class="col">
+                        <label for="mil" class="form-label visually-hidden">Montant à convertir :</label>
+                        <div class="input-group">
+                            <input type="number" id="mil" name="mil" class="form-control" required>
+                            <div class="input-group-append">
+                                <div class="input-group-text">ML</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto align-self-center">
+                        <span class="ver">vaut :</span>
+                    </div>
+
+                    <div class="col">
+                        <label for="litrecible" class="form-label visually-hidden">resultat</label>
+                        <div class="input-group">
+                            <input id="litrecible" name="litrecible" type="text" class="form-control " disabled>
+                            <div class="input-group-append">
+                                <div class="input-group-text">L</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+        
+    </div>
+</section><!-- End Liquid Converter Section -->
 
 
 <script type="text/javascript">
@@ -176,7 +148,12 @@ template('header', array(
 
                 let inputName = Object.keys(result.data)[0];
 
-                event.target.querySelector(`input[name="devisecible"]`).value = result.data[inputName];
+                // Update the correct input field based on the form name
+                if (event.target.name === 'euros-dollars') {
+                    event.target.querySelector(`input[name="devisecible"]`).value = result.data[inputName];
+                } else if (event.target.name === 'mLtoL') {
+                    event.target.querySelector(`input[name="litre"]`).value = result.data[inputName];
+                }
             });
         }
     });
