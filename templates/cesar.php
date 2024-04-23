@@ -29,66 +29,66 @@ template('header', array(
         <div class="row justify-content-around">
             <fieldset class="col-5 mt-4 ms-5">
                 <legend>Chiffrer</legend>
-                <form action="" method="POST" name="cesar-encrypt">
-                    <div class="form-group row">
-                        <div class="col-12">
-                            <label for="clear">Le texte à chiffrer</label>
-                            <div class="input-group">
-                                <textarea id="clear" name="clear" rows="10" class="form-control" required></textarea>
+                <form action="" method="POST" name="cesar">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <label for="clear">Le texte à chiffrer</label>
+                                <div class="input-group">
+                                    <textarea id="clear" name="clear" rows="10" class="form-control" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <label for="key">Clé</label>
+                                <div class="input-group">
+                                    <input id="key" name="key" type="number" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <label for="result">Résultat</label>
+                                <p id="result"></p>
                             </div>
                         </div>
 
-                        <div class="col-12 mt-4">
-                            <label for="key">Clé</label>
-                            <div class="input-group">
-                                <input id="key" name="key" type="number" class="form-control">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <button type="submit" class="btn-block btn btn-primary">Chiffrer</button>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+
+                <fieldset class="col-5 mt-4  ms-md-auto me-5">
+                    <legend>Déchiffrer</legend>
+                    <form action="" method="POST" name="cesar">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <label for="result">Le texte à déchiffrer</label>
+                                <div class="input-group">
+                                    <textarea id="result" name="result" rows="10" class="form-control" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <label for="key">Clé</label>
+                                <div class="input-group">
+                                    <input id="key" name="key" type="number" class="form-control" >
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <label for="clear">Résultat</label>
+                                <p id="clear"></p>
                             </div>
                         </div>
 
-                        <div class="col-12 mt-4">
-                            <label for="encrypt-result">Résultat</label>
-                            <p id="encrypt-result"></p>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Chiffrer</button>
-                        </div>
-                    </div>
-                </form>
-            </fieldset>
-
-            <fieldset class="col-5 mt-4 me-5 ms-md-auto">
-                <legend>Déchiffrer</legend>
-                <form action="" method="POST" name="cesar-decrypt">
-                    <div class="form-group row">
-                        <div class="col-12">
-                            <label for="result">Le texte à déchiffrer</label>
-                            <div class="input-group">
-                                <textarea id="result" name="result" rows="10" class="form-control" required></textarea>
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <button type="submit" class="btn-block btn btn-primary">Déchiffrer</button>
                             </div>
                         </div>
-
-                        <div class="col-12 mt-4">
-                            <label for="key">Clé</label>
-                            <div class="input-group">
-                                <input id="key" name="key" type="number" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="col-12 mt-4">
-                            <label for="decrypt-result">Résultat</label>
-                            <p id="decrypt-result"></p>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Déchiffrer</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
             </fieldset>
         </div>
     </div>
