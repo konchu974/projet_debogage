@@ -20,14 +20,13 @@ Pouvez-vous faire en sorte que le formulaire de contact nous envoie un email ?
 De plus, la validation du formulaire est un peu violente.. pouvez-vous l'adoucir et rendre le formulaire plus "user friendly" ?
 <!-- TODO -->
 
+**Apostrophes dans ses mails**
+
+L'utilisateur peut envoyer des mails avec des apostrophes sans erreurs
+<!-- TODO -->
 
 <!-- Fini  -->
 
-**Apostrophes dans ses mails**
-
-<!-- 
-L'utilisateur peut envoyer des mails avec des apostrophes sans erreurs
--->
 
 **mL en Litre et Litre en mL**
 
