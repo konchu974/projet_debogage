@@ -22,6 +22,13 @@ De plus, la validation du formulaire est un peu violente.. pouvez-vous l'adoucir
 
 
 <!-- Fini  -->
+
+**Apostrophes dans ses mails**
+
+<!-- 
+L'utilisateur peut envoyer des mails avec des apostrophes sans erreurs
+-->
+
 **mL en Litre et Litre en mL**
 
 <!-- 
