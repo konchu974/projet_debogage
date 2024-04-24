@@ -10,7 +10,7 @@ template('header', array(
         <div class="section-title">
             <h2>Convertisseur Euros</h2>
         </div>
-        <fieldset class="col-12 mt-4 p-3">
+        <fieldset class="col-12 mt-2 p-3">
             <legend>convertisseur de devise</legend>
             <form action="" method="post" name="euros-dollars">
                 <div class="row">
@@ -76,21 +76,21 @@ template('header', array(
 </section><!-- End Currency Converter Section -->
 
 <!-- ======= Liquid Converter Section ======= -->
-<section id="currency-converter" class="currency-converter mt-2 ms-5 me-5">
+<section id="currency-converter" class="currency-converter ms-5 me-5">
     <div class="container">
         <div class="section-title">
             <h2>Convertisseur de Liquide</h2>
         </div>
-        <fieldset class="col-12 mt-4 p-3">
-            <legend>convertisseur de devise</legend>
-            <form action="" method="post" name="mLtoL">
+        <fieldset class="col-12 mt-2 p-3">
+            <legend>convertisseur de Millilitres en Litres</legend>
+            <form action="" method="post" name="mL-L">
                 <div class="row">
                     <div class="col">
                         <label for="mil" class="form-label visually-hidden">Montant à convertir :</label>
                         <div class="input-group">
-                            <input type="number" id="mil" name="mil" class="form-control" required>
+                            <input id="mil" name="mil" type="text" class="form-control" required>
                             <div class="input-group-append">
-                                <div class="input-group-text">ML</div>
+                                <div class="input-group-text">mL</div>
                             </div>
                         </div>
                     </div>
@@ -101,13 +101,50 @@ template('header', array(
                     </div>
 
                     <div class="col">
-                        <label for="litrecible" class="form-label visually-hidden">resultat</label>
+                        <label for="litre" class="form-label visually-hidden">resultat</label>
                         <div class="input-group">
-                            <input id="litrecible" name="litrecible" type="text" class="form-control" disabled>
+                            <input id="litre" name="litre" type="text" class="form-control" disabled>
                             <div class="input-group-append">
                                 <div class="input-group-text">L</div>
-                                </div>
                             </div>
+                        </div>
+                    </div>
+                        <div class="col-auto">
+                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+        <div class="container">
+        <fieldset class="col-12 mt-2 p-3">
+            <legend>Convertisseur de Litres en Millilitres</legend>
+            <form action="" method="post" name="mL-L">
+                <div class="row">
+                    <div class="col">
+                        <label for="litre" class="form-label visually-hidden">Montant à convertir :</label>
+                        <div class="input-group">
+                            <input id="litre" name="litre" type="text" class="form-control" required>
+                            <div class="input-group-append">
+                                <div class="input-group-text">L</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto align-self-center">
+                        <span class="ver">vaut :</span>
+                    </div>
+
+                    <div class="col">
+                        <label for="mil" class="form-label visually-hidden">resultat</label>
+                        <div class="input-group">
+                            <input id="mil" name="mil" type="text" class="form-control" disabled>
+                            <div class="input-group-append">
+                                <div class="input-group-text">mL</div>
+                            </div>
+                        </div>
                         </div>
                         <div class="col-auto">
                             <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
@@ -117,7 +154,6 @@ template('header', array(
                 </div>
             </form>
         </fieldset>
-        
     </div>
 </section><!-- End Liquid Converter Section -->
 
@@ -143,17 +179,17 @@ template('header', array(
                     )
                 });
 
-                console.log(event.target.name);
+                console.log(response);
 
                 const result = await response.json();
                 
                 let inputName = Object.keys(result.data)[0];
-                console.log(inputName);
+
                 // Update the correct input field based on the form name
                 if (event.target.name === 'euros-dollars') {
                     event.target.querySelector(`input[name="devisecible"]`).value = result.data[inputName];
-                } else if (event.target.name === 'mLtoL') {
-                    event.target.querySelector(`input[name="litrecible"]`).value = result.data[inputName];
+                } else if (event.target.name === 'mL-L') {
+                    event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
                 }
             });
         }
