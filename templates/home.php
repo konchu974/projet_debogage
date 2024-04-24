@@ -4,10 +4,8 @@ template('header', array(
 ));
 
 $messages = [];
-
-// Vérifier si le formulaire a été soumis
+// Send contact form to database
 if (!empty($_POST)) {
-    // Récupérer les données du formulaire
     $submited_items = array(
         'name' => $_POST['name'],
         'email' => $_POST['email'],
@@ -15,7 +13,6 @@ if (!empty($_POST)) {
         'message' => $_POST['message']
     );
 
-    // Valider les données du formulaire
     $validated_items = validate($submited_items, array(
         'name' => array(
             'label' => 'Name',
@@ -41,34 +38,25 @@ if (!empty($_POST)) {
         )
     ));
 
-    // Vérifier si la validation a réussi
     $result = check_validation($validated_items);
 
     if (!is_passed($result)) {
         $messages = $result;
     } else {
-        // Connexion à la base de données
-        $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
-        if (mysqli_connect_errno()) {
-            throw new Exception("Database connection failed: " . mysqli_connect_error());
-        }
-
-        // Utiliser la fonction insert avec les données validées du formulaire
-        if(insert($connection, 'admin_messages', $result)) {
+        if(insert('admin_messages', $result)) {
             $messages['success'][] = 'Message envoyé !';
         }
-
-        mysqli_close($connection); // Fermer la connexion après utilisation
     }
 
     $to = "frederic.vinet2003@gmail.com";
     $subject = $result['subject'];
     $message = $result['message'];
 
-    // Envoyer un email
-    mail($to, $subject, $message);
-}
 
+    mail(
+        $to, $subject, $message
+    );
+}
 ?>
 
 <!-- ======= La boite à outils ======= -->
