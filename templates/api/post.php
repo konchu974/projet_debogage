@@ -106,12 +106,17 @@ switch ($body->form){
 
         echo json_encode($data);
         break;
-    case 'mLtoL':
-         // Call the mL to L conversion function
-        $mil = $body->mil;
-        $litrecible = $body->litrecible;
-    
-        $result = convertmLtoL($litrecible, $mil);
+    case 'mL-L':
+        $mil = null;
+        $litre = null;
+        if(property_exists($body, 'mil')){
+            $mil = $body->mil;
+        }
+        if(property_exists($body, 'litre')){
+            $litre = $body->litre;
+        }
+
+        $result = convertmLtoL($litre, $mil);
 
         $data = [
             'response' => 'success',
