@@ -88,7 +88,7 @@ template('header', array(
                     <div class="col">
                         <label for="mil" class="form-label visually-hidden">Montant à convertir :</label>
                         <div class="input-group">
-                            <input id="mil" name="mil" type="text" class="form-control" required>
+                            <input id="mil" name="mil" type="number" class="form-control" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">mL</div>
                             </div>
@@ -125,7 +125,7 @@ template('header', array(
                     <div class="col">
                         <label for="litre" class="form-label visually-hidden">Montant à convertir :</label>
                         <div class="input-group">
-                            <input id="litre" name="litre" type="text" class="form-control" required>
+                            <input id="litre" name="litre" type="number" class="form-control" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">L</div>
                             </div>
