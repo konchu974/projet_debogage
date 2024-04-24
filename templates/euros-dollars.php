@@ -1,6 +1,6 @@
 <?php
 template('header', array(
-    'title' => 'Boite à outils • Devise',
+    'title' => 'Boite à outils • Convertisseur',
 ));
 ?>
 
