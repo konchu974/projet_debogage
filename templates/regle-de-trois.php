@@ -28,7 +28,7 @@ template('header', array(
                         <div class="col-md-5 mx-auto">
                             <label for="a" class="form-label visually-hidden">Nombre A</label>
                             <div class="input-group">
-                                <input id="a" name="a" type="text" class="form-control" aria-label="Nombre A">
+                                <input id="a" name="a" type="number" class="form-control" aria-label="Nombre A">
                             </div>
                         </div>
 
@@ -38,7 +38,7 @@ template('header', array(
                         <div class="col-md-5 mx-auto">
                             <label for="c" class="form-label visually-hidden">Nombre C</label>
                             <div class="input-group">
-                                <input id="c" name="c" type="text" class="form-control" aria-label="Nombre C">
+                                <input id="c" name="c" type="number" class="form-control" aria-label="Nombre C">
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ template('header', array(
                         <div class="col-md-5 mx-auto">
                             <label for="b" class="form-label visually-hidden">Nombre B</label>
                             <div class="input-group">
-                                <input id="b" name="b" type="text" class="form-control" aria-label="Nombre B">
+                                <input id="b" name="b" type="number" class="form-control" aria-label="Nombre B">
                             </div>
                         </div>
 
