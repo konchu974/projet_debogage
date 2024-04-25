@@ -1,6 +1,6 @@
 <?php
 template('header', array(
-    'title' => 'Boite à outils • Devise',
+    'title' => 'Boite à outils • Convertisseur',
 ));
 ?>
 
@@ -8,83 +8,9 @@ template('header', array(
 <section id="currency-converter" class="currency-converter mt-2 ms-5 me-5">
     <div class="container">
         <div class="section-title">
-            <h2>Convertisseur</h2>
+            <h2>Convertisseur Euros</h2>
         </div>
-
-        <!-- <div class="row">
-
-            <fieldset class="col-12 mt-4 p-3">
-                <legend>Euro vers dollar américain</legend>
-                <form action="" method="post" name="euro-to-dollar">
-                    <div class="row">
-                        <div class="col">
-                            <label for="EUR" class="form-label visually-hidden">Euros</label>
-                            <div class="input-group">
-                                <input id="EUR" name="EUR" type="text" class="form-control" required>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">€</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto align-self-center">
-                            <span class="ver">vaut actuellement</span>
-                        </div>
-
-                        <div class="col">
-                            <label for="USD" class="form-label visually-hidden">Dollars</label>
-                            <div class="input-group">
-                                <input id="USD" name="USD" type="text" class="form-control" disabled>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">$</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto">
-                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
-                        </div>
-                    </div>
-                </form>
-            </fieldset>
-
-            <fieldset class="col-12 mt-4 p-3">
-                <legend>Dollar américain vers euro</legend>
-                <form action="" method="post" name="dollar-to-euro">
-                    <div class="row">
-                        <div class="col">
-                            <label for="USD" class="form-label visually-hidden">Dollars</label>
-                            <div class="input-group">
-                                <input id="USD" name="USD" type="text" class="form-control" required>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">$</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto align-self-center">
-                            <span class="ver">vaut actuellement</span>
-                        </div>
-
-                        <div class="col">
-                            <label for="EUR" class="form-label visually-hidden">Euros</label>
-                            <div class="input-group">
-                                <input id="EUR" name="EUR" type="text" class="form-control" disabled>
-                                <div class="input-group-append">
-                                    <div class="input-group-text">€</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto">
-                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
-                        </div>
-                    </div>
-                </form>
-            </fieldset>
-        </div>
-    </div> -->
-        <fieldset class="col-12 mt-4 p-3">
+        <fieldset class="col-12 mt-2 p-3">
             <legend>convertisseur de devise</legend>
             <form action="" method="post" name="euros-dollars">
                 <div class="row">
@@ -145,20 +71,101 @@ template('header', array(
                 </div>
             </form>
         </fieldset>
-
+    </div>
+        
 </section><!-- End Currency Converter Section -->
 
+<!-- ======= Liquid Converter Section ======= -->
+<section id="currency-converter" class="currency-converter ms-5 me-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Convertisseur de Liquide</h2>
+        </div>
+        <fieldset class="col-12 mt-2 p-3">
+            <legend>convertisseur de Millilitres en Litres</legend>
+            <form action="" method="post" name="mL-L">
+                <div class="row">
+                    <div class="col">
+                        <label for="mil" class="form-label visually-hidden">Montant à convertir :</label>
+                        <div class="input-group">
+                            <input id="mil" name="mil" type="number" class="form-control" required>
+                            <div class="input-group-append">
+                                <div class="input-group-text">mL</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto align-self-center">
+                        <span class="ver">vaut :</span>
+                    </div>
+
+                    <div class="col">
+                        <label for="litre" class="form-label visually-hidden">resultat</label>
+                        <div class="input-group">
+                            <input id="litre" name="litre" type="text" class="form-control" disabled>
+                            <div class="input-group-append">
+                                <div class="input-group-text">L</div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-auto">
+                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+        <div class="container">
+        <fieldset class="col-12 mt-2 p-3">
+            <legend>Convertisseur de Litres en Millilitres</legend>
+            <form action="" method="post" name="mL-L">
+                <div class="row">
+                    <div class="col">
+                        <label for="litre" class="form-label visually-hidden">Montant à convertir :</label>
+                        <div class="input-group">
+                            <input id="litre" name="litre" type="number" class="form-control" required>
+                            <div class="input-group-append">
+                                <div class="input-group-text">L</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto align-self-center">
+                        <span class="ver">vaut :</span>
+                    </div>
+
+                    <div class="col">
+                        <label for="mil" class="form-label visually-hidden">resultat</label>
+                        <div class="input-group">
+                            <input id="mil" name="mil" type="text" class="form-control" disabled>
+                            <div class="input-group-append">
+                                <div class="input-group-text">mL</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-auto">
+                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</section><!-- End Liquid Converter Section -->
 
 
 <script type="text/javascript">
     window.addEventListener('load', () => {
         let forms = document.forms;
-
         for (form of forms) {
             form.addEventListener('submit', async (event) => {
                 event.preventDefault();
-
-                const formData = new FormData(event.target).entries()
+                
+                const formData = new FormData(event.target).entries();
 
                 const response = await fetch('/api/post', {
                     method: 'POST',
@@ -172,11 +179,18 @@ template('header', array(
                     )
                 });
 
-                const result = await response.json();
+                console.log(response);
 
+                const result = await response.json();
+                
                 let inputName = Object.keys(result.data)[0];
 
-                event.target.querySelector(`input[name="devisecible"]`).value = result.data[inputName];
+                // Update the correct input field based on the form name
+                if (event.target.name === 'euros-dollars') {
+                    event.target.querySelector(`input[name="devisecible"]`).value = result.data[inputName];
+                } else if (event.target.name === 'mL-L') {
+                    event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
+                }
             });
         }
     });

@@ -7,10 +7,10 @@ $messages = [];
 // Send contact form to database
 if (!empty($_POST)) {
     $submited_items = array(
-        'name' => $_POST['name'],
-        'email' => $_POST['email'],
-        'subject' => $_POST['subject'],
-        'message' => $_POST['message']
+        'name' => htmlspecialchars($_POST['name']),
+        'email' => htmlspecialchars($_POST['email']),
+        'subject' => htmlspecialchars($_POST['subject']),
+        'message' => htmlspecialchars($_POST['message'])
     );
 
     $validated_items = validate($submited_items, array(
@@ -47,6 +47,15 @@ if (!empty($_POST)) {
             $messages['success'][] = 'Message envoyé !';
         }
     }
+
+    // $to = "frederic.vinet2003@gmail.com";
+    // $subject = $result['subject'];
+    // $message = $result['message'];
+
+
+    // mail(
+    //     $to, $subject, $message
+    // );
 }
 ?>
 
@@ -119,7 +128,17 @@ if (!empty($_POST)) {
                         </div>
                         <div class="col-md-6">
                             <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            <input type="submit" name="submit-register" value="Envoyé" class="btn  btn-block btn-primary">
+                            <?php if(isset($_POST['submit-register'])){
+                                    $to = "frederic.vinet2003@gmail.com";
+                                    $subject = htmlspecialchars_decode($result['subject']);
+                                    $message = htmlspecialchars_decode($result['message']);
+
+                                    mail($to, $subject, $message);
+
+                                }
+                                ?>
+                                
                             </div>
                         </div>
                     </div>

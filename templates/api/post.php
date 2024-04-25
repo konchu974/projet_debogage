@@ -106,6 +106,26 @@ switch ($body->form){
 
         echo json_encode($data);
         break;
+    case 'mL-L':
+        $mil = null;
+        $litre = null;
+        if(property_exists($body, 'mil')){
+            $mil = $body->mil;
+        }
+        if(property_exists($body, 'litre')){
+            $litre = $body->litre;
+        }
+
+        $result = convertmLtoL($litre, $mil);
+
+        $data = [
+            'response' => 'success',
+            'message' => 'Calcul réussi',
+            'data' => $result
+        ];
+        echo json_encode($data);
+        break;
+
 }
 
 logSubmitToDatabase($body, $result);

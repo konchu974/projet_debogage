@@ -87,4 +87,18 @@
             $toCurrency => $convertedAmount,
         ];
     }
+    function convertmLtoL($litre = null, $mil = null){
+        if ($litre === null) {
+            $litre = $mil / 1000;
+            return [
+                'litre' => $litre,
+            ];
+        }
+        if ($mil === null) {
+            $mil = $litre * 1000;
+            return [
+                'mil' => $mil,
+            ];
+        }
+    }
     

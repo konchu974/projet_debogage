@@ -72,10 +72,7 @@ function select(string $table, string $column = null, $conditions = array()) {
     }
 }
 
-/**
- *
- */
-function find(string $table, array $conditions) {
-    $result = select($table, null, $conditions);
-    return $result[0];
-}
+// function find(string $table, array $conditions) {
+//     $result = select($table, null, $conditions);
+//     return $result[0];
+// }
