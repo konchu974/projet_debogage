@@ -48,14 +48,7 @@ if (!empty($_POST)) {
         }
     }
 
-    // $to = "frederic.vinet2003@gmail.com";
-    // $subject = $result['subject'];
-    // $message = $result['message'];
-
-
-    // mail(
-    //     $to, $subject, $message
-    // );
+    
 }
 ?>
 
@@ -68,15 +61,22 @@ if (!empty($_POST)) {
             <p>Transformer 1/4 de litre en millilitres ou convertir des euros en dollars n'a jamais été aussi simple !</p>
         </div>
 
-        <?php getAlert($messages); ?>
+        
+        
 
         <div class="row">
             <div class="col-lg-12 pt-4 pt-lg-0 content">
-                <h3>Il vous manque une fonctionnalité ?</h3>
-                <p class="fst-italic">
-                    Écrivez-nous grâce au formulaire de contact et nous vous répondrons dans les plus brefs délais.
-                </p>
-                <form id="contact-form" name="contact-form" method="POST">
+            <div class="d-flex justify-content-center">
+                <div id="loader" class="spinner-border" role="status" style="display: none;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <form id="contact-form" name="contact-form" method="POST" onsubmit="showLoader()">
+                <?php getAlert($messages); ?>
+                    <h3>Il vous manque une fonctionnalité ?</h3>
+                    <p class="fst-italic">
+                        Écrivez-nous grâce au formulaire de contact et nous vous répondrons dans les plus brefs délais.
+                    </p>
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-md-6">
@@ -129,15 +129,16 @@ if (!empty($_POST)) {
                         <div class="col-md-6">
                             <div class="d-grid gap-2">
                             <input type="submit" name="submit-register" value="Envoyé" class="btn  btn-block btn-primary">
-                            <?php if(isset($_POST['submit-register'])){
+                            <?php 
+                                // Après le traitement du formulaire et avant l'affichage de getAlert()
+                                if (isset($_POST['submit-register'])) {
                                     $to = "frederic.vinet2003@gmail.com";
                                     $subject = htmlspecialchars_decode($result['subject']);
                                     $message = htmlspecialchars_decode($result['message']);
 
                                     mail($to, $subject, $message);
-
-                                }
-                                ?>
+                                 }
+                            ?>
                                 
                             </div>
                         </div>
@@ -149,6 +150,29 @@ if (!empty($_POST)) {
     </div>
 </section>
 <!-- End La boite à outils Section -->
+<script>
+    function showLoader() {
+        // Cacher les champs de texte
+        document.getElementById('contact-form').style.display = 'none';
+        // Afficher le loader
+        document.getElementById('loader').style.display = 'block';
+        // Appeler la fonction pour soumettre le formulaire
+        submitForm();
+    }
+
+    function submitForm() {
+        // Soumettre le formulaire après un court délai (simulé ici par setTimeout)
+        setTimeout(function() {
+            document.getElementById('contact-form').submit();
+        }, 1000); // ajustez le délai selon vos besoins
+    }
+
+    function hideLoader() {
+        // Cacher le loader
+        document.getElementById('loader').style.display = 'none';
+    }
+</script>
+
 
 
 
