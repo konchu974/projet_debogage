@@ -6,26 +6,28 @@ Pouvez-vous vérifier et supprimer celles qui ne sont pas nécessaires ?
 
 
 <!-- TODO -->
- 
-**Validation des formulaires**
-Je n'ai pas trop compris comment fonctionne l'envoi de formulaire. 
-Pouvez-vous regarder cela et uniformiser si besoin ? Nous avons besoin de faire les calculs côté serveur et non côté client. (pour les logs d'analytics)
-Nous avons aussi besoin d'une validation côté back, je n'ai pas l'impression que cela soit le cas actuellement.
-<!-- TODO -->
-
-
 **Formulaire de contact**
 
 Pouvez-vous faire en sorte que le formulaire de contact nous envoie un email ?
 De plus, la validation du formulaire est un peu violente.. pouvez-vous l'adoucir et rendre le formulaire plus "user friendly" ?
 <!-- TODO -->
 
-**Apostrophes dans ses mails**
 
-L'utilisateur peut envoyer des mails avec des apostrophes sans erreurs
-<!-- TODO -->
 
 <!-- Fini  -->
+**Apostrophes dans ses mails**
+
+<!-- 
+L'utilisateur peut envoyer des mails avec des apostrophes sans erreurs 
+-->
+
+**Validation des formulaires**
+
+<!-- 
+Je n'ai pas trop compris comment fonctionne l'envoi de formulaire. 
+Pouvez-vous regarder cela et uniformiser si besoin ? Nous avons besoin de faire les calculs côté serveur et non côté client. (pour les logs d'analytics)
+Nous avons aussi besoin d'une validation côté back, je n'ai pas l'impression que cela soit le cas actuellement. 
+-->
 
 
 **mL en Litre et Litre en mL**
