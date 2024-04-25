@@ -4,17 +4,24 @@ J'ai l'impression que certaines librairies ne sont pas utilisées.
 Pouvez-vous vérifier et supprimer celles qui ne sont pas nécessaires ?
 <!-- TODO -->
 
+**Compatibilité navigateurs et W3C** 
 
-<!-- TODO -->
-**Formulaire de contact**
+Nous aimerions savoir sur quel navigateur le site est compatible et si les formulaires sont valides W3C.
+N'hésitez pas à faire un audit de sécurité si vous le souhaitez, j'ai un peu peur que le site soit vulnérable.
 
-Pouvez-vous faire en sorte que le formulaire de contact nous envoie un email ?
-De plus, la validation du formulaire est un peu violente.. pouvez-vous l'adoucir et rendre le formulaire plus "user friendly" ?
-<!-- TODO -->
+FireFox, Opera Gx, Google Chrome, Edge, Brave
 
-
+à tester d'autre navigateur 
 
 <!-- Fini  -->
+
+**Formulaire de contact**
+
+<!-- 
+Pouvez-vous faire en sorte que le formulaire de contact nous envoie un email ?
+De plus, la validation du formulaire est un peu violente.. pouvez-vous l'adoucir et rendre le formulaire plus "user friendly" ? 
+-->
+
 **Apostrophes dans ses mails**
 
 <!-- 
@@ -61,15 +68,6 @@ Qu'en pensez-vous ?
 J'ai aussi remarqué que bootstrap est en version 4 alors que la version 5 est sortie récemment. 
 -->
 
-**Compatibilité navigateurs et W3C** 
-
-<!-- 
-Nous aimerions savoir sur quel navigateur le site est compatible et si les formulaires sont valides W3C.
-N'hésitez pas à faire un audit de sécurité si vous le souhaitez, j'ai un peu peur que le site soit vulnérable.
-FireFox, Opera Gx, Google Chrome, Edge
--->
-
-<!-- à tester d'autre navigateur  -->
 
 <!-- Fini  -->
 

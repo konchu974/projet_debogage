@@ -61,21 +61,22 @@ if (!empty($_POST)) {
             <p>Transformer 1/4 de litre en millilitres ou convertir des euros en dollars n'a jamais été aussi simple !</p>
         </div>
 
-        <?php getAlert($messages); ?>
-        <div class="d-flex justify-content-center">
-            <div id="loader" class="spinner-border" role="status" style="display: none;">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
+        
+        
 
         <div class="row">
             <div class="col-lg-12 pt-4 pt-lg-0 content">
-                
-            <form id="contact-form" name="contact-form" method="POST" onsubmit="showLoader()" class="<?php echo $formClass; ?>">
-                <h3>Il vous manque une fonctionnalité ?</h3>
-                <p class="fst-italic">
-                    Écrivez-nous grâce au formulaire de contact et nous vous répondrons dans les plus brefs délais.
-                </p>
+            <div class="d-flex justify-content-center">
+                <div id="loader" class="spinner-border" role="status" style="display: none;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <form id="contact-form" name="contact-form" method="POST" onsubmit="showLoader()">
+                <?php getAlert($messages); ?>
+                    <h3>Il vous manque une fonctionnalité ?</h3>
+                    <p class="fst-italic">
+                        Écrivez-nous grâce au formulaire de contact et nous vous répondrons dans les plus brefs délais.
+                    </p>
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-md-6">
@@ -136,12 +137,7 @@ if (!empty($_POST)) {
                                     $message = htmlspecialchars_decode($result['message']);
 
                                     mail($to, $subject, $message);
-
-                                    // Ajouter une classe CSS pour cacher les champs de texte après la soumission du formulaire
-                                    $formClass = isset($messages) && !empty($messages) ? "" : "d-none";
-                                } else {
-                                    $formClass = ""; // Si le formulaire n'est pas encore soumis, ne pas appliquer la classe de style
-                                }
+                                 }
                             ?>
                                 
                             </div>
