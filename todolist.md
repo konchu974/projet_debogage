@@ -4,6 +4,11 @@ J'ai l'impression que certaines librairies ne sont pas utilisées.
 Pouvez-vous vérifier et supprimer celles qui ne sont pas nécessaires ?
 <!-- TODO -->
 
+**Vendor**
+
+Dans config.php et connection.php il y a une ligne "Pourquoi pas utiliser un .ENV ?" se renseigner et faire ça
+il faut utiliser
+
 **Compatibilité navigateurs et W3C** 
 
 Nous aimerions savoir sur quel navigateur le site est compatible et si les formulaires sont valides W3C.
