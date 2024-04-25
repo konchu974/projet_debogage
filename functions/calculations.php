@@ -101,4 +101,15 @@
             ];
         }
     }
-    
+    function convertToBinary ($decimal){
+        $binary = decbin($decimal);
+        return [
+            'binary' => $binary,
+        ];
+    }
+    function convertToHexadecimal ($decimal){
+        $hexadecimal = dechex($decimal);
+        return [
+            'hex' => $hexadecimal,
+        ];
+    }

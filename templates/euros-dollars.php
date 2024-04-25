@@ -179,8 +179,6 @@ template('header', array(
                     )
                 });
 
-                console.log(response);
-
                 const result = await response.json();
                 
                 let inputName = Object.keys(result.data)[0];
