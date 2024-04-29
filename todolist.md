@@ -4,28 +4,42 @@ J'ai l'impression que certaines librairies ne sont pas utilisées.
 Pouvez-vous vérifier et supprimer celles qui ne sont pas nécessaires ?
 <!-- TODO -->
 
+**Vendor**
 
-<!-- TODO -->
- 
-**Validation des formulaires**
-Je n'ai pas trop compris comment fonctionne l'envoi de formulaire. 
-Pouvez-vous regarder cela et uniformiser si besoin ? Nous avons besoin de faire les calculs côté serveur et non côté client. (pour les logs d'analytics)
-Nous avons aussi besoin d'une validation côté back, je n'ai pas l'impression que cela soit le cas actuellement.
-<!-- TODO -->
+Dans config.php et connection.php il y a une ligne "Pourquoi pas utiliser un .ENV ?" se renseigner et faire ça
+il faut utiliser
 
+**Compatibilité navigateurs et W3C** 
+
+Nous aimerions savoir sur quel navigateur le site est compatible et si les formulaires sont valides W3C.
+N'hésitez pas à faire un audit de sécurité si vous le souhaitez, j'ai un peu peur que le site soit vulnérable.
+
+FireFox, Opera Gx, Google Chrome, Edge, Brave
+
+à tester d'autre navigateur 
+
+<!-- Fini  -->
 
 **Formulaire de contact**
 
+<!-- 
 Pouvez-vous faire en sorte que le formulaire de contact nous envoie un email ?
-De plus, la validation du formulaire est un peu violente.. pouvez-vous l'adoucir et rendre le formulaire plus "user friendly" ?
-<!-- TODO -->
+De plus, la validation du formulaire est un peu violente.. pouvez-vous l'adoucir et rendre le formulaire plus "user friendly" ? 
+-->
 
 **Apostrophes dans ses mails**
 
-L'utilisateur peut envoyer des mails avec des apostrophes sans erreurs
-<!-- TODO -->
+<!-- 
+L'utilisateur peut envoyer des mails avec des apostrophes sans erreurs 
+-->
 
-<!-- Fini  -->
+**Validation des formulaires**
+
+<!-- 
+Je n'ai pas trop compris comment fonctionne l'envoi de formulaire. 
+Pouvez-vous regarder cela et uniformiser si besoin ? Nous avons besoin de faire les calculs côté serveur et non côté client. (pour les logs d'analytics)
+Nous avons aussi besoin d'une validation côté back, je n'ai pas l'impression que cela soit le cas actuellement. 
+-->
 
 
 **mL en Litre et Litre en mL**
@@ -59,15 +73,6 @@ Qu'en pensez-vous ?
 J'ai aussi remarqué que bootstrap est en version 4 alors que la version 5 est sortie récemment. 
 -->
 
-**Compatibilité navigateurs et W3C** 
-
-<!-- 
-Nous aimerions savoir sur quel navigateur le site est compatible et si les formulaires sont valides W3C.
-N'hésitez pas à faire un audit de sécurité si vous le souhaitez, j'ai un peu peur que le site soit vulnérable.
-FireFox, Opera Gx, Google Chrome, Edge
--->
-
-<!-- à tester d'autre navigateur  -->
 
 <!-- Fini  -->
 

@@ -125,7 +125,23 @@ switch ($body->form){
         ];
         echo json_encode($data);
         break;
+    case 'decimal-hexadecimal':
+        if(property_exists($body, 'decimal')){
+            $decimal = $body->decimal;
+        }
+        
+        $hex = convertToHexadecimal($decimal);
+        $bin = convertToBinary($decimal);
 
+        $result = [$hex, $bin];
+
+        $data = [
+            'response' => 'success',
+            'message' => 'Calcul réussi',
+            'data' => $result
+        ];
+        echo json_encode($data);
+        break;
 }
 
 logSubmitToDatabase($body, $result);

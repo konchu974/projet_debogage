@@ -26,7 +26,7 @@
         <div class="row">
             <fieldset class="col-md-6 mt-3">
                 <legend>Convertisseur</legend>
-                <form action="" name="decimal-hexadecimal">
+                <form action="" method="post" name="decimal-hexadecimal">
                     <div class="row p-2">
                         <div class="col-12">
                             <label for="decimal" class="form-label">Décimal</label>
@@ -48,6 +48,9 @@
                                 <input id="binary" name="binary" type="text" class="form-control" disabled>
                             </div>
                         </div>
+                        <div class="col-auto">
+                            <button name="submit" type="submit" class="btn btn-primary">Calculer</button>
+                        </div>
                     </div>
                 </form>
             </fieldset>
@@ -57,39 +60,38 @@
 
 
 
-    <script type="text/javascript">
-        window.addEventListener('load', () => {
-            let forms = document.forms;
-            let decimal = forms['decimal-hexadecimal'].elements['decimal'];
+<script type="text/javascript">
+    window.addEventListener('load', () => {
+        let forms = document.forms;
+        for (form of forms) {
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                
+                const formData = new FormData(event.target).entries();
 
-            function dec2Hex(dec) {
-                return Math.abs(dec).toString(16);
-            }
+                const response = await fetch('/api/post', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(
+                        Object.assign(Object.fromEntries(formData), {
+                            form: event.target.name
+                        })
+                    )
+                });
 
-            function convertToBinary(x) {
-                let bin = 0;
-                let rem, i = 1, step = 1;
-                while (x !== 0) {
-                    rem = x % 2;
-                    console.log(
-                        `Step ${step++}: ${x}/2, Remainder = ${rem}, Quotient = ${parseInt(x/2)}`
-                    );
-                    x = parseInt(x / 2);
-                    bin = bin + rem * i;
-                    i = i * 10;
-                }
-                return bin;
-            }
-
-            decimal.addEventListener('input', () => {
-                let hex = forms['decimal-hexadecimal'].elements['hex'];
-                let binary = forms['decimal-hexadecimal'].elements['binary'];
-
-                hex.value = dec2Hex(decimal.value);
-                binary.value = convertToBinary(decimal.value);
+                const result = await response.json();
+                console.log(result);
+                let inputNameHex = Object.keys(result.data[0])[0];
+                let inputNameBin = Object.keys(result.data[1])[0];
+                
+                // Update the correct input field based on the form name
+                event.target.querySelector(`input[name="hex"]`).value = result.data[0][inputNameHex];
+                event.target.querySelector(`input[name="binary"]`).value = result.data[1][inputNameBin];
             });
-
-        });
-    </script>
+        }
+    });
+</script>
 
 <?php template('footer');
