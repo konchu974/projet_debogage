@@ -60,10 +60,6 @@ if (!empty($_POST)) {
             <p>La boite à outils est un site accessible 24h/24 et 7j/7 qui vous permet de réaliser un bon nombre de calculs ou transformations nécessaires au quotidien</p>
             <p>Transformer 1/4 de litre en millilitres ou convertir des euros en dollars n'a jamais été aussi simple !</p>
         </div>
-
-        
-        
-
         <div class="row">
             <div class="col-lg-12 pt-4 pt-lg-0 content">
             <div class="d-flex justify-content-center">
@@ -77,7 +73,6 @@ if (!empty($_POST)) {
                     <p class="fst-italic">
                         Écrivez-nous grâce au formulaire de contact et nous vous répondrons dans les plus brefs délais.
                     </p>
-                    <!--Grid row-->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
@@ -92,9 +87,6 @@ if (!empty($_POST)) {
                             </div>
                         </div>
                     </div>
-                    <!--Grid row-->
-
-                    <!--Grid row-->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
@@ -103,9 +95,6 @@ if (!empty($_POST)) {
                             </div>
                         </div>
                     </div>
-                    <!--Grid row-->
-
-                    <!--Grid row-->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
@@ -114,9 +103,6 @@ if (!empty($_POST)) {
                             </div>
                         </div>
                     </div>
-                    <!--Grid row-->
-
-                    <!--Grid row-->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-check">
@@ -129,21 +115,19 @@ if (!empty($_POST)) {
                         <div class="col-md-6">
                             <div class="d-grid gap-2">
                             <input type="submit" name="submit-register" value="Envoyé" class="btn  btn-block btn-primary">
-                            <?php 
-                                // Après le traitement du formulaire et avant l'affichage de getAlert()
-                                if (isset($_POST['submit-register'])) {
-                                    $to = "frederic.vinet2003@gmail.com";
-                                    $subject = htmlspecialchars_decode($result['subject']);
-                                    $message = htmlspecialchars_decode($result['message']);
+                                <?php 
+                                    // Après le traitement du formulaire et avant l'affichage de getAlert()
+                                    if (isset($_POST['submit-register'])) {
+                                        $to = "frederic.vinet2003@gmail.com";
+                                        $subject = htmlspecialchars_decode($result['subject']);
+                                        $message = htmlspecialchars_decode($result['message']);
 
-                                    mail($to, $subject, $message);
-                                 }
-                            ?>
-                                
+                                        mail($to, $subject, $message);
+                                    }
+                                ?>
                             </div>
                         </div>
                     </div>
-                    <!--Grid row-->
                 </form>
             </div>
         </div>
