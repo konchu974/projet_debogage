@@ -30,7 +30,7 @@ function get_server($key) {
     return $server;
 }
 
-// function redirect($url, $status_code = 303) {
+// ICI function redirect($url, $status_code = 303) {
 //     header('Location: ' . home_url() . $url, true, $status_code);
 //     die();
 // }
