@@ -122,7 +122,7 @@ if (!empty($_POST)) {
                                 <?php 
                                     // Traitement de l'envoi du formulaire de contact par email
                                     if (isset($_POST['submit-register'])) {
-                                        $to = "Fifi102030b@gmail.com";
+                                        $to = "frederic.vinet2003@gmail.com";
                                         $subject = htmlspecialchars_decode($result['subject']);
                                         $message = htmlspecialchars_decode($result['message']);
 

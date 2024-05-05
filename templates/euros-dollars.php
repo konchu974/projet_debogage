@@ -9,7 +9,7 @@ template('header', array(
 <section id="currency-converter" class="currency-converter mt-2 ms-5 me-5">
     <div class="container">
         <div class="section-title">
-            <h2>Convertisseur Euros</h2>
+            <h2>Convertisseur Monétaire</h2>
         </div>
         <!-- Formulaire de conversion de devises -->
         <fieldset class="col-12 mt-2 p-3">
@@ -130,7 +130,7 @@ template('header', array(
         <!-- Formulaire de conversion inverse de liquide -->
         <fieldset class="col-12 mt-2 p-3">
             <legend>Convertisseur de Litres en Millilitres</legend>
-            <form action="" method="post" name="L-mL">
+            <form action="" method="post" name="mL-L">
                 <div class="row">
                     <!-- Champ pour entrer le montant à convertir -->
                     <div class="col">
