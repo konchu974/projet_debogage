@@ -19,6 +19,14 @@ function getPercent($percent = null, $of = null , $result = null) {
     }
 }
 
+// Fonction pour calculer la règles de trois
+function ruleOfThird($a = 1, $b = 1, $c = 1): array
+    {
+        return [
+            'd' => ($b * $c)  / $a,
+        ];
+    }
+
 // Fonction de chiffrement et déchiffrement par substitution (chiffrement de César)
 function cesar($clear, $key, $reverse = false) {
     // Définition de l'alphabet
