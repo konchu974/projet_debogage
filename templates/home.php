@@ -4,7 +4,8 @@ template('header', array(
 ));
 
 $messages = [];
-// Send contact form to database
+
+// Traitement du formulaire de contact lorsqu'il est soumis
 if (!empty($_POST)) {
     $submited_items = array(
         'name' => htmlspecialchars($_POST['name']),
@@ -13,6 +14,7 @@ if (!empty($_POST)) {
         'message' => htmlspecialchars($_POST['message'])
     );
 
+    // Validation des données du formulaire
     $validated_items = validate($submited_items, array(
         'name' => array(
             'label' => 'Name',
@@ -40,19 +42,19 @@ if (!empty($_POST)) {
 
     $result = check_validation($validated_items);
 
+    // Si la validation a échoué, afficher les messages d'erreur
     if (!is_passed($result)) {
         $messages = $result;
     } else {
+        // Si la validation réussit, insérer les données dans la base de données et afficher un message de succès
         if(insert('admin_messages', $result)) {
             $messages['success'][] = 'Message envoyé !';
         }
     }
-
-    
 }
 ?>
 
-<!-- ======= La boite à outils ======= -->
+<!-- Section La boite à outils -->
 <section id="homepage" class="homepage ms-5 me-5">
     <div class="container">
         <div class="section-title">
@@ -62,13 +64,14 @@ if (!empty($_POST)) {
         </div>
         <div class="row">
             <div class="col-lg-12 pt-4 pt-lg-0 content">
-            <div class="d-flex justify-content-center">
-                <div id="loader" class="spinner-border" role="status" style="display: none;">
-                    <span class="visually-hidden">Loading...</span>
+                <div class="d-flex justify-content-center">
+                    <div id="loader" class="spinner-border" role="status" style="display: none;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
                 </div>
-            </div>
-            <form id="contact-form" name="contact-form" method="POST" onsubmit="showLoader()">
-                <?php getAlert($messages); ?>
+                <!-- Formulaire de contact -->
+                <form id="contact-form" name="contact-form" method="POST" onsubmit="showLoader()">
+                    <?php getAlert($messages); ?>
                     <h3>Il vous manque une fonctionnalité ?</h3>
                     <p class="fst-italic">
                         Écrivez-nous grâce au formulaire de contact et nous vous répondrons dans les plus brefs délais.
@@ -114,11 +117,12 @@ if (!empty($_POST)) {
                         </div>
                         <div class="col-md-6">
                             <div class="d-grid gap-2">
-                            <input type="submit" name="submit-register" value="Envoyé" class="btn  btn-block btn-primary">
+                                <!-- Bouton d'envoi du formulaire -->
+                                <input type="submit" name="submit-register" value="Envoyé" class="btn  btn-block btn-primary">
                                 <?php 
-                                    // Après le traitement du formulaire et avant l'affichage de getAlert()
+                                    // Traitement de l'envoi du formulaire de contact par email
                                     if (isset($_POST['submit-register'])) {
-                                        $to = "frederic.vinet2003@gmail.com";
+                                        $to = "Fifi102030b@gmail.com";
                                         $subject = htmlspecialchars_decode($result['subject']);
                                         $message = htmlspecialchars_decode($result['message']);
 
@@ -133,14 +137,14 @@ if (!empty($_POST)) {
         </div>
     </div>
 </section>
-<!-- End La boite à outils Section -->
+
+<!-- Script JavaScript pour afficher le loader -->
 <script>
     function showLoader() {
-        // Cacher les champs de texte
         document.getElementById('contact-form').style.display = 'none';
         // Afficher le loader
         document.getElementById('loader').style.display = 'block';
-        // Appeler la fonction pour soumettre le formulaire
+     
         submitForm();
     }
 
@@ -148,17 +152,13 @@ if (!empty($_POST)) {
         // Soumettre le formulaire après un court délai (simulé ici par setTimeout)
         setTimeout(function() {
             document.getElementById('contact-form').submit();
-        }, 1000); // ajustez le délai selon vos besoins
+        }, 1000); 
     }
 
     function hideLoader() {
-        // Cacher le loader
+       
         document.getElementById('loader').style.display = 'none';
     }
 </script>
-
-
-
-
 
 <?php template('footer');
