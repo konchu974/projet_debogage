@@ -130,7 +130,7 @@ template('header', array(
         <!-- Formulaire de conversion inverse de liquide -->
         <fieldset class="col-12 mt-2 p-3">
             <legend>Convertisseur de Litres en Millilitres</legend>
-            <form action="" method="post" name="L-mL">
+            <form action="" method="post" name="mL-L">
                 <div class="row">
                     <!-- Champ pour entrer le montant à convertir -->
                     <div class="col">

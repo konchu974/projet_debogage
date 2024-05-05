@@ -10,7 +10,7 @@ SetEnvIf Request_URI ^/admin auth=1
 
 AuthName "Merci de vous connecter"
 AuthType Basic
-AuthUserFile "C:\laragon\www\projet_debogage\.htpasswd"
+AuthUserFile "C:\Users\yswai\AppData\Local\ALL\Code\laragon\www\projet_debogage\.htpasswd"
 
 # first, allow everybody
 Order Allow,Deny
