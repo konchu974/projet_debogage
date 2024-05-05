@@ -1,8 +1,10 @@
 <?php
+// Inclusion du fichier de modèle 'header' avec un tableau de paramètres
 template('header', array(
-    'title' => 'Boite à outils • Règle de trois',
+    'title' => 'Boite à outils • Règle de trois', // Définition du titre de la page
 ));
 ?>
+
 
 <!-- ======= About Section ======= -->
 <section id="homepage" class="homepage mt-2 ms-5 me-5">
@@ -72,39 +74,47 @@ template('header', array(
 </section>
 
 
-
-
-
 <script type="text/javascript">
+    // Attend que la fenêtre soit chargée
     window.addEventListener('load', () => {
+        // Sélectionne tous les formulaires de la page
         let forms = document.forms;
 
         for (form of forms) {
+            // Ajoute un écouteur d'événements pour l'événement de soumission du formulaire
             form.addEventListener('submit', async (event) => {
+                // Empêche le comportement par défaut du formulaire de se soumettre
                 event.preventDefault();
 
+                // Crée un objet FormData contenant les données du formulaire soumis
                 const formData = new FormData(event.target).entries()
 
+                // Effectue une requête POST à l'API '/api/post'
                 const response = await fetch('/api/post', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json' 
                     },
-                    body: JSON.stringify(
+                    body: JSON.stringify( // Corps de la requête : les données du formulaire au format JSON
+                        // Crée un objet JSON contenant les données du formulaire et le nom du formulaire
                         Object.assign(Object.fromEntries(formData), {
-                            form: event.target.name
+                            form: event.target.name 
                         })
                     )
                 });
 
+                // Attend la réponse de la requête et la transforme en objet JSON
                 const result = await response.json();
 
+                // Récupère le nom du premier champ de saisie de la réponse
                 let inputName = Object.keys(result.data)[0];
 
+                // Met à jour la valeur du champ de saisie correspondant dans le formulaire soumis
                 event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
             });
         }
     });
 </script>
+
 
 <?php template('footer');
