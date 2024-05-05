@@ -19,6 +19,7 @@ function getPercent($percent = null, $of = null , $result = null) {
     }
 }
 
+// Fonction pour calculer la règles de trois
 function ruleOfThird($a = 1, $b = 1, $c = 1): array
     {
         return [
