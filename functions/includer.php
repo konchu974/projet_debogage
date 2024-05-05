@@ -1,33 +1,41 @@
 <?php
 
 /**
- * Check existing php file
+ * Vérifie l'existence d'un fichier PHP
  *
- * @param string file name
- * @return boolean
+ * @param string 
+ * @param string 
+ * @return mixed 
  */
 function has_file(string $file_name, string $directory = null) {
+    // Si un répertoire est spécifié, le formate correctement
     if (!empty($directory)) {
-        $directory = ltrim(rtrim($directory, '/'), '/');
-        $directory .= '/';
+        $directory = ltrim(rtrim($directory, '/'), '/') . '/'; // Supprime les slashs inutiles et ajoute un slash à la fin
     }
 
+    // Construit le chemin complet du fichier
     $file = ROOT_PATH . $directory . $file_name . '.php';
 
     return file_exists($file) ? $file : false;
 }
 
 /**
- * Get file or include a file and send the data to the file if the data has been inserted
+ * Obtient un fichier ou inclut un fichier et envoie les données au fichier si les données ont été insérées
  *
- * @param string file name
- * @param string directory
- * @param array data to be sent
- *
- * @return //the file wich included by
- * include_once function.
+ * @param string
+ * @param string 
+ * @param array 
+ * @return mixed 
  */
 function get_file(string $file_name, string $directory = null, array $data = array()) {
+    // Vérifie si le fichier existe
     $file = has_file($file_name, $directory);
-    return !empty($file) ? include_once $file : printf("Fichier [<b> %s </b>] introuvable", $file_name);
+
+    if (!empty($file)) {
+        // Inclut une seule fois le fichier et retourne le résultat d'inclusion
+        return include_once $file;
+    } else {
+       
+        printf("Fichier [<b> %s </b>] introuvable", $file_name);
+    }
 }

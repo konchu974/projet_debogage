@@ -1,13 +1,15 @@
 <?php
+// Inclut le fichier de modèle 'header' avec un titre spécifié
 template('header', array(
     'title' => 'Boite à outils • Accueil',
 ));
 
+// Récupère les messages reçus depuis la base de données
 $messages = select('admin_messages');
+
+// Récupère les logs des soumissions de formulaires depuis la base de données
 $logs = select('logs');
-
 ?>
-
 <section id="homepage" class="homepage">
     <div class="container">
         <div class="section-title">
