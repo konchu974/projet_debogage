@@ -6,10 +6,10 @@
  */
 
 // Pourquoi pas utiliser un .ENV ?
-return array(
-    'host' => 'localhost',
-    'user' => 'root',
-    'password' => '',
-    'port' => 3306,
-    'name' => 'mytoolbox'
-);
+// return array(
+//     'host' => 'localhost',
+//     'user' => 'root',
+//     'password' => '',
+//     'port' => 3306,
+//     'name' => 'mytoolbox'
+// );

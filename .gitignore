@@ -1,4 +1,4 @@
 vendor
-/.idea/
 .htaccess
 config.php
+.env

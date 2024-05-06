@@ -9,7 +9,7 @@ template('header', array(
 <section id="currency-converter" class="currency-converter mt-2 ms-5 me-5">
     <div class="container">
         <div class="section-title">
-            <h2>Convertisseur Euros</h2>
+            <h2>Convertisseur Monétaire</h2>
         </div>
         <!-- Formulaire de conversion de devises -->
         <fieldset class="col-12 mt-2 p-3">
