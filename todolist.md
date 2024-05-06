@@ -5,6 +5,10 @@
 J'ai l'impression que certaines librairies ne sont pas utilisées. 
 Pouvez-vous vérifier et supprimer celles qui ne sont pas nécessaires ? 
 -->
+**Vendor**
+
+Dans config.php et connection.php il y a une ligne "Pourquoi pas utiliser un .ENV ?" se renseigner et faire ça
+il faut utiliser
 
 **Compatibilité navigateurs et W3C** 
 
@@ -21,6 +25,13 @@ FireFox, Opera Gx, Google Chrome, Edge, Brave
 <!-- 
 Dans config.php et connection.php il y a une ligne "Pourquoi pas utiliser un .ENV ?" se renseigner et faire ça
 il faut utiliser 
+-->
+
+**Librairies**
+
+<!-- 
+J'ai l'impression que certaines librairies ne sont pas utilisées. 
+Pouvez-vous vérifier et supprimer celles qui ne sont pas nécessaires ? 
 -->
 
 **Formulaire de contact**
@@ -43,7 +54,6 @@ Je n'ai pas trop compris comment fonctionne l'envoi de formulaire.
 Pouvez-vous regarder cela et uniformiser si besoin ? Nous avons besoin de faire les calculs côté serveur et non côté client. (pour les logs d'analytics)
 Nous avons aussi besoin d'une validation côté back, je n'ai pas l'impression que cela soit le cas actuellement. 
 -->
-
 
 **mL en Litre et Litre en mL**
 
